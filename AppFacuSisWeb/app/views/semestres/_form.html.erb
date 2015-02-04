@@ -1,25 +1,20 @@
-<%= form_for(@semestre) do |f| %>
-  <% if @semestre.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@semestre.errors.count, "error") %> prohibited this semestre from being saved:</h2>
-
-      <ul>
-      <% @semestre.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @semestre, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :descripcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descripcion, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :numero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :numero, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :descripcion %><br />
-    <%= f.text_field :descripcion %>
-  </div>
-  <div class="field">
-    <%= f.label :numero %><br />
-    <%= f.number_field :numero %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                semestres_path, :class => 'btn' %>
   </div>
 <% end %>
