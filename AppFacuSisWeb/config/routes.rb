@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :oportunidads
+
+
   resources :modo_ingresos
 
 
