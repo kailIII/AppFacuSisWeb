@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  codigo: 1
+  nombre: MyString
+  alias: MyString
+  hs: MyString
+  contenido: 
+
+two:
+  codigo: 1
+  nombre: MyString
+  alias: MyString
+  hs: MyString
+  contenido: 
