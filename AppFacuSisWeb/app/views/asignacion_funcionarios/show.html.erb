@@ -7,11 +7,11 @@
   <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
   <dd><%= @asignacion_funcionario.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:sede_id) %>:</strong></dt>
-  <dd><%= @asignacion_funcionario.sede_id %></dd>
+  <dd><%= @asignacion_funcionario.sede.completo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:funcionario_id) %>:</strong></dt>
-  <dd><%= @asignacion_funcionario.funcionario_id %></dd>
+  <dd><%= @asignacion_funcionario.funcionario.completo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:cargo_id) %>:</strong></dt>
-  <dd><%= @asignacion_funcionario.cargo_id %></dd>
+  <dd><%= @asignacion_funcionario.cargo.completo %></dd>
 </dl>
 
 <div class="form-actions">

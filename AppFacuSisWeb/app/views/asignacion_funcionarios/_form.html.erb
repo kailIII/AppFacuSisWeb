@@ -8,19 +8,19 @@
   <div class="control-group">
     <%= f.label :sede_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :sede_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_funcionario, :sede_id, Sede.all, :id, :nombre, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :funcionario_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :funcionario_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_funcionario, :funcionario_id, Funcionario.all, :id, :nombres, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :cargo_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :cargo_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_funcionario, :cargo_id, Cargo.all, :id, :descripcion, {prompt: true}) %>
     </div>
   </div>
 

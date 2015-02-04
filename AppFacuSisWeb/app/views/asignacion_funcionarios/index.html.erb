@@ -19,10 +19,10 @@
       <tr>
         <td><%= link_to asignacion_funcionario.id, asignacion_funcionario_path(asignacion_funcionario) %></td>
         <td><%= asignacion_funcionario.nombre %></td>
-        <td><%= asignacion_funcionario.sede_id %></td>
-        <td><%= asignacion_funcionario.funcionario_id %></td>
-        <td><%= asignacion_funcionario.cargo_id %></td>
-        <td><%=l asignacion_funcionario.created_at %></td>
+        <td><%= asignacion_funcionario.sede.completo %></td>
+        <td><%= asignacion_funcionario.funcionario.completo %></td>
+        <td><%= asignacion_funcionario.cargo.completo %></td>
+        <td><%= asignacion_funcionario.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_asignacion_funcionario_path(asignacion_funcionario), :class => 'btn btn-mini' %>
