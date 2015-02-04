@@ -7,4 +7,8 @@ class Sede < ActiveRecord::Base
   has_many :asignacion_funcionarios
   
   attr_accessible :nombre, :universidad_id, :facultad_id, :ciudad_id
+  
+  def completo
+    "#{nombre}"
+  end
 end

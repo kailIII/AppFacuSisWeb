@@ -4,4 +4,8 @@ class Funcionario < ActiveRecord::Base
   :especialidad, :est_civil, :fnac, :genero, :lnac, :nacionalidad, :nombres, :telefono
   
   has_many :asignacion_funcionarios
+  
+  def completo
+    "#{nombres} #{apellidos}"
+  end
 end
