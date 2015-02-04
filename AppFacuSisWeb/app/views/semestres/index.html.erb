@@ -1,0 +1,25 @@
+<h1>Listing semestres</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Numero</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @semestres.each do |semestre| %>
+  <tr>
+    <td><%= semestre.descripcion %></td>
+    <td><%= semestre.numero %></td>
+    <td><%= link_to 'Show', semestre %></td>
+    <td><%= link_to 'Edit', edit_semestre_path(semestre) %></td>
+    <td><%= link_to 'Destroy', semestre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Semestre', new_semestre_path %>
