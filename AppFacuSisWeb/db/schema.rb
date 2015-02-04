@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204232411) do
+ActiveRecord::Schema.define(:version => 20150204233059) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "ci",           :limit => 30
@@ -51,6 +51,25 @@ ActiveRecord::Schema.define(:version => 20150204232411) do
   add_index "asignacion_docentes", ["dia_semanal_id"], :name => "index_asignacion_docentes_on_dia_semanal_id"
   add_index "asignacion_docentes", ["docente_id"], :name => "index_asignacion_docentes_on_docente_id"
   add_index "asignacion_docentes", ["materia_id"], :name => "index_asignacion_docentes_on_materia_id"
+
+  create_table "asignacion_estado_alumnos", :force => true do |t|
+    t.string   "nombre",             :limit => 60
+    t.integer  "alumno_id"
+    t.integer  "semestre_id"
+    t.integer  "periodo_lectivo_id"
+    t.integer  "materia_id"
+    t.integer  "sede_id"
+    t.integer  "estado_alumno_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "asignacion_estado_alumnos", ["alumno_id"], :name => "index_asignacion_estado_alumnos_on_alumno_id"
+  add_index "asignacion_estado_alumnos", ["estado_alumno_id"], :name => "index_asignacion_estado_alumnos_on_estado_alumno_id"
+  add_index "asignacion_estado_alumnos", ["materia_id"], :name => "index_asignacion_estado_alumnos_on_materia_id"
+  add_index "asignacion_estado_alumnos", ["periodo_lectivo_id"], :name => "index_asignacion_estado_alumnos_on_periodo_lectivo_id"
+  add_index "asignacion_estado_alumnos", ["sede_id"], :name => "index_asignacion_estado_alumnos_on_sede_id"
+  add_index "asignacion_estado_alumnos", ["semestre_id"], :name => "index_asignacion_estado_alumnos_on_semestre_id"
 
   create_table "asignacion_funcionarios", :force => true do |t|
     t.string   "nombre",         :limit => 60
