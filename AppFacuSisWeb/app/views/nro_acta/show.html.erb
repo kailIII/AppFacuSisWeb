@@ -1,0 +1,23 @@
+<%- model_class = NroActum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nro_acta) %>:</strong></dt>
+  <dd><%= @nro_actum.nro_acta %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tomo) %>:</strong></dt>
+  <dd><%= @nro_actum.tomo %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              nro_acta_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_nro_actum_path(@nro_actum), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              nro_actum_path(@nro_actum),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

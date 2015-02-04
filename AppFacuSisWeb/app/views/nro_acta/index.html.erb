@@ -1,0 +1,38 @@
+<%- model_class = NroActum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nro_acta) %></th>
+      <th><%= model_class.human_attribute_name(:tomo) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @nro_acta.each do |nro_actum| %>
+      <tr>
+        <td><%= link_to nro_actum.id, nro_actum_path(nro_actum) %></td>
+        <td><%= nro_actum.nro_acta %></td>
+        <td><%= nro_actum.tomo %></td>
+        <td><%=l nro_actum.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_nro_actum_path(nro_actum), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      nro_actum_path(nro_actum),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_nro_actum_path,
+            :class => 'btn btn-primary' %>
