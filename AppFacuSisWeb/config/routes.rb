@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :modo_ingresos
+
+
   resources :tipo_becas
 
 
