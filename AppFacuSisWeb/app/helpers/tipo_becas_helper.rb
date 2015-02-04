@@ -1,0 +1,2 @@
+module TipoBecasHelper
+end
