@@ -1,4 +1,7 @@
 AppFacuSisWeb::Application.routes.draw do
+  resources :semestres
+
+
   resources :tareas
 
 
