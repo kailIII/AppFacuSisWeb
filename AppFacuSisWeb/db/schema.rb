@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204164801) do
+ActiveRecord::Schema.define(:version => 20150204170322) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "ci",           :limit => 30
@@ -45,11 +45,14 @@ ActiveRecord::Schema.define(:version => 20150204164801) do
 
   create_table "carreras", :force => true do |t|
     t.string   "nombre",          :limit => 60
-    t.integer  "duracion",        :limit => 2
+    t.integer  "duracion",        :limit => 1
     t.string   "titulo_obtenido", :limit => 60
+    t.integer  "facultad_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
+
+  add_index "carreras", ["facultad_id"], :name => "index_carreras_on_facultad_id"
 
   create_table "ciudades", :force => true do |t|
     t.string   "nombre",     :limit => 60
