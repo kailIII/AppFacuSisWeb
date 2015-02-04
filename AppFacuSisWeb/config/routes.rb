@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :asignacion_estado_alumnos
+
+
   resources :estado_alumnos
 
 
