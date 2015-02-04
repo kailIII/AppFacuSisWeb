@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plan_curricular: 
+  facultad: 
+  curso: 
+  materia: 
+
+two:
+  plan_curricular: 
+  facultad: 
+  curso: 
+  materia: 

@@ -1,0 +1,29 @@
+<h1>Listing malla_curriculars</h1>
+
+<table>
+  <tr>
+    <th>Plan curricular</th>
+    <th>Facultad</th>
+    <th>Curso</th>
+    <th>Materia</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @malla_curriculars.each do |malla_curricular| %>
+  <tr>
+    <td><%= malla_curricular.plan_curricular %></td>
+    <td><%= malla_curricular.facultad %></td>
+    <td><%= malla_curricular.curso %></td>
+    <td><%= malla_curricular.materia %></td>
+    <td><%= link_to 'Show', malla_curricular %></td>
+    <td><%= link_to 'Edit', edit_malla_curricular_path(malla_curricular) %></td>
+    <td><%= link_to 'Destroy', malla_curricular, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Malla curricular', new_malla_curricular_path %>

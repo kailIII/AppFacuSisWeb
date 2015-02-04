@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Plan curricular:</b>
+  <%= @malla_curricular.plan_curricular %>
+</p>
+
+<p>
+  <b>Facultad:</b>
+  <%= @malla_curricular.facultad %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @malla_curricular.curso %>
+</p>
+
+<p>
+  <b>Materia:</b>
+  <%= @malla_curricular.materia %>
+</p>
+
+
+<%= link_to 'Edit', edit_malla_curricular_path(@malla_curricular) %> |
+<%= link_to 'Back', malla_curriculars_path %>
