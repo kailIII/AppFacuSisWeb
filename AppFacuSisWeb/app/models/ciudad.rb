@@ -4,4 +4,8 @@ class Ciudad < ActiveRecord::Base
   has_many :sedes
   
   attr_accessible :nombre
+  
+   def completo
+    "#{nombre}"
+  end
 end
