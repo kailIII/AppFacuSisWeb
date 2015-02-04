@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  docente: 
+  curso: 
+  materia: 
+  dia_semanal: 
+
+two:
+  nombre: MyString
+  docente: 
+  curso: 
+  materia: 
+  dia_semanal: 
