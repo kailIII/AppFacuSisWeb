@@ -1,3 +1,4 @@
 class Carrera < ActiveRecord::Base
-  attr_accessible :duracion, :nombre, :titulo_obtenido
+  belongs_to :facultad
+  attr_accessible :duracion, :nombre, :titulo_obtenido, :facultad_id
 end
