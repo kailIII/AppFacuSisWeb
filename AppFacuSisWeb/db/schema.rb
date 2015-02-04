@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204230009) do
+ActiveRecord::Schema.define(:version => 20150204231527) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "ci",           :limit => 30
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(:version => 20150204230009) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
+
+  create_table "asignacion_docentes", :force => true do |t|
+    t.string   "nombre",         :limit => 60
+    t.integer  "docente_id"
+    t.integer  "curso_id"
+    t.integer  "materia_id"
+    t.integer  "dia_semanal_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "asignacion_docentes", ["curso_id"], :name => "index_asignacion_docentes_on_curso_id"
+  add_index "asignacion_docentes", ["dia_semanal_id"], :name => "index_asignacion_docentes_on_dia_semanal_id"
+  add_index "asignacion_docentes", ["docente_id"], :name => "index_asignacion_docentes_on_docente_id"
+  add_index "asignacion_docentes", ["materia_id"], :name => "index_asignacion_docentes_on_materia_id"
 
   create_table "asignacion_funcionarios", :force => true do |t|
     t.string   "nombre",         :limit => 60
