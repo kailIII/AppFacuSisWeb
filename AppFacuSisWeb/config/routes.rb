@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :universidads
+
+
   resources :docentes
 
   resources :alumnos
