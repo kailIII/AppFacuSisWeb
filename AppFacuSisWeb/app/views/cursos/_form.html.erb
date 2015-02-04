@@ -2,13 +2,14 @@
   <div class="control-group">
     <%= f.label :semestre_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :semestre_id, :class => 'number_field' %>
+      <%= collection_select(:curso, :semestre_id, Semestre.all, :id, :nombre, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :periodo_lectivo_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :periodo_lectivo_id, :class => 'number_field' %>
+      <%= collection_select(:curso, :periodo_lectivo_id, PeriodoLectivo.all, :id, :nombre, {prompt: true}) %>
     </div>
   </div>
 

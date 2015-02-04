@@ -16,8 +16,8 @@
     <% @cursos.each do |curso| %>
       <tr>
         <td><%= link_to curso.id, curso_path(curso) %></td>
-        <td><%= curso.semestre_id %></td>
-        <td><%= curso.periodo_lectivo_id %></td>
+        <td><%= curso.semestre.completo %></td>
+        <td><%= curso.periodo_lectivo.completo %></td>
         <td><%=l curso.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

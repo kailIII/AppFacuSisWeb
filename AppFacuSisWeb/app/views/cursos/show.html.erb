@@ -5,9 +5,9 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:semestre_id) %>:</strong></dt>
-  <dd><%= @curso.semestre_id %></dd>
+  <dd><%= @curso.semestre.descripcion %></dd>
   <dt><strong><%= model_class.human_attribute_name(:periodo_lectivo_id) %>:</strong></dt>
-  <dd><%= @curso.periodo_lectivo_id %></dd>
+  <dd><%= @curso.periodo_lectivo.periodo %></dd>
 </dl>
 
 <div class="form-actions">
