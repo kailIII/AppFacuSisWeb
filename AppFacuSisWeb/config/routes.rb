@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :nro_acta
+
+
   resources :plan_curriculars
 
 
