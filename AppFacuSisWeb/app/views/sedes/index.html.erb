@@ -19,9 +19,9 @@
       <tr>
         <td><%= link_to sede.id, sede_path(sede) %></td>
         <td><%= sede.nombre %></td>
-        <td><%= sede.universidad_id %></td>
-        <td><%= sede.facultad_id %></td>
-        <td><%= sede.ciudad_id %></td>
+        <td><%= sede.universidad.completo %></td>
+        <td><%= sede.facultad.completo %></td>
+        <td><%= sede.ciudad.completo %></td>
         <td><%=l sede.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

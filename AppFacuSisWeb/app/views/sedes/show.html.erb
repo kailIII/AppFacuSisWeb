@@ -7,11 +7,11 @@
   <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
   <dd><%= @sede.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:universidad_id) %>:</strong></dt>
-  <dd><%= @sede.universidad_id %></dd>
+  <dd><%= @sede.universidad.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:facultad_id) %>:</strong></dt>
-  <dd><%= @sede.facultad_id %></dd>
+  <dd><%= @sede.facultad.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:ciudad_id) %>:</strong></dt>
-  <dd><%= @sede.ciudad_id %></dd>
+  <dd><%= @sede.ciudad.nombre %></dd>
 </dl>
 
 <div class="form-actions">
