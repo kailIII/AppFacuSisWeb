@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :carreras
+
+
   resources :ciudads
 
 
