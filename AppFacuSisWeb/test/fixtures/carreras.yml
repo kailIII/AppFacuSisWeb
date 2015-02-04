@@ -4,8 +4,10 @@ one:
   nombre: MyString
   duracion: 1
   titulo_obtenido: MyString
+  facultad: 
 
 two:
   nombre: MyString
   duracion: 1
   titulo_obtenido: MyString
+  facultad: 
