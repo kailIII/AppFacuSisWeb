@@ -1,0 +1,45 @@
+<%- model_class = Docente -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:ci) %>:</strong></dt>
+  <dd><%= @docente.ci %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombres) %>:</strong></dt>
+  <dd><%= @docente.nombres %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:apellidos) %>:</strong></dt>
+  <dd><%= @docente.apellidos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fnac) %>:</strong></dt>
+  <dd><%= @docente.fnac %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lnac) %>:</strong></dt>
+  <dd><%= @docente.lnac %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
+  <dd><%= @docente.direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefono) %>:</strong></dt>
+  <dd><%= @docente.telefono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:celular) %>:</strong></dt>
+  <dd><%= @docente.celular %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @docente.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:est_civil) %>:</strong></dt>
+  <dd><%= @docente.est_civil %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:genero) %>:</strong></dt>
+  <dd><%= @docente.genero %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nacionalidad) %>:</strong></dt>
+  <dd><%= @docente.nacionalidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:especialidad) %>:</strong></dt>
+  <dd><%= @docente.especialidad %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              docentes_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_docente_path(@docente), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              docente_path(@docente),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
