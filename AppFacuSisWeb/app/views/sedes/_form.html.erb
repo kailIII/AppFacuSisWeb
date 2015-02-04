@@ -8,19 +8,19 @@
   <div class="control-group">
     <%= f.label :universidad_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :universidad_id, :class => 'number_field' %>
+      <%= collection_select(:sede, :universidad_id, Universidad.all, :id, :nombre, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :facultad_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :facultad_id, :class => 'number_field' %>
+      <%= collection_select(:sede, :facultad_id, Facultad.all, :id, :nombre, {prompt: true}) %> 
     </div>
   </div>
   <div class="control-group">
     <%= f.label :ciudad_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :ciudad_id, :class => 'number_field' %>
+      <%= collection_select(:sede, :ciudad_id, Ciudad.all, :id, :nombre, {prompt: true}) %> 
     </div>
   </div>
 
