@@ -1,5 +1,11 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :sedes
+
+
+  resources :carreras
+
+
   resources :nro_acta
 
 
@@ -28,9 +34,6 @@ AppFacuSisWeb::Application.routes.draw do
 
 
   resources :cargos
-
-
-  resources :carreras
 
 
   resources :ciudads
