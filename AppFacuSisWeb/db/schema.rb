@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204152556) do
+ActiveRecord::Schema.define(:version => 20150204161257) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "ci",           :limit => 30
@@ -100,6 +100,16 @@ ActiveRecord::Schema.define(:version => 20150204152556) do
     t.string   "especialidad", :limit => 60
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+  end
+
+  create_table "materias", :force => true do |t|
+    t.integer  "codigo",     :limit => 15
+    t.string   "nombre",     :limit => 60
+    t.string   "alias",      :limit => 30
+    t.string   "hs",         :limit => 10
+    t.text     "contenido",  :limit => 120
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "periodo_lectivos", :force => true do |t|
