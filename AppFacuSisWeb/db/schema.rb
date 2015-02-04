@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204180248) do
+ActiveRecord::Schema.define(:version => 20150204183240) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "ci",           :limit => 30
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(:version => 20150204180248) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
+
+  create_table "asignacion_funcionarios", :force => true do |t|
+    t.string   "nombre",         :limit => 60
+    t.integer  "sede_id"
+    t.integer  "funcionario_id"
+    t.integer  "cargo_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "asignacion_funcionarios", ["cargo_id"], :name => "index_asignacion_funcionarios_on_cargo_id"
+  add_index "asignacion_funcionarios", ["funcionario_id"], :name => "index_asignacion_funcionarios_on_funcionario_id"
+  add_index "asignacion_funcionarios", ["sede_id"], :name => "index_asignacion_funcionarios_on_sede_id"
 
   create_table "cargos", :force => true do |t|
     t.string   "descripcion", :limit => 60
