@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :asignacion_docentes
+
+
   resources :dia_semanals
 
 
