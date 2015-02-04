@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :tipo_becas
+
+
   resources :nota
 
 
