@@ -4,4 +4,8 @@ class Universidad < ActiveRecord::Base
   has_many :sedes
   
   attr_accessible :direccion, :nombre, :telefono, :web
+  
+   def completo
+    "#{nombre}"
+  end
 end
