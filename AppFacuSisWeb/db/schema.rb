@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150204233059) do
+ActiveRecord::Schema.define(:version => 20150204233652) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "ci",           :limit => 30
@@ -173,6 +173,20 @@ ActiveRecord::Schema.define(:version => 20150204233059) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end
+
+  create_table "malla_curriculares", :force => true do |t|
+    t.integer  "plan_curricular_id"
+    t.integer  "facultad_id"
+    t.integer  "curso_id"
+    t.integer  "materia_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "malla_curriculares", ["curso_id"], :name => "index_malla_curriculares_on_curso_id"
+  add_index "malla_curriculares", ["facultad_id"], :name => "index_malla_curriculares_on_facultad_id"
+  add_index "malla_curriculares", ["materia_id"], :name => "index_malla_curriculares_on_materia_id"
+  add_index "malla_curriculares", ["plan_curricular_id"], :name => "index_malla_curriculares_on_plan_curricular_id"
 
   create_table "materias", :force => true do |t|
     t.integer  "codigo",     :limit => 15
