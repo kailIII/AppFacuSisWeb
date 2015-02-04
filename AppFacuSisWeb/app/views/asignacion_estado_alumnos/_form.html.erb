@@ -1,0 +1,50 @@
+<%= form_for @asignacion_estado_alumno, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :alumno_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :alumno_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :semestre_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :semestre_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :periodo_lectivo_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :periodo_lectivo_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :materia_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :materia_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sede_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :sede_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :estado_alumno_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :estado_alumno_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                asignacion_estado_alumnos_path, :class => 'btn' %>
+  </div>
+<% end %>

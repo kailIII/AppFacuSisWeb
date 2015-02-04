@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  alumno: 
+  semestre: 
+  periodo_lectivo: 
+  materia: 
+  sede: 
+  estado_alumno: 
+
+two:
+  nombre: MyString
+  alumno: 
+  semestre: 
+  periodo_lectivo: 
+  materia: 
+  sede: 
+  estado_alumno: 

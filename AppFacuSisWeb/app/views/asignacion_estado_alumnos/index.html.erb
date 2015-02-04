@@ -1,0 +1,48 @@
+<%- model_class = AsignacionEstadoAlumno -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:alumno_id) %></th>
+      <th><%= model_class.human_attribute_name(:semestre_id) %></th>
+      <th><%= model_class.human_attribute_name(:periodo_lectivo_id) %></th>
+      <th><%= model_class.human_attribute_name(:materia_id) %></th>
+      <th><%= model_class.human_attribute_name(:sede_id) %></th>
+      <th><%= model_class.human_attribute_name(:estado_alumno_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @asignacion_estado_alumnos.each do |asignacion_estado_alumno| %>
+      <tr>
+        <td><%= link_to asignacion_estado_alumno.id, asignacion_estado_alumno_path(asignacion_estado_alumno) %></td>
+        <td><%= asignacion_estado_alumno.nombre %></td>
+        <td><%= asignacion_estado_alumno.alumno_id %></td>
+        <td><%= asignacion_estado_alumno.semestre_id %></td>
+        <td><%= asignacion_estado_alumno.periodo_lectivo_id %></td>
+        <td><%= asignacion_estado_alumno.materia_id %></td>
+        <td><%= asignacion_estado_alumno.sede_id %></td>
+        <td><%= asignacion_estado_alumno.estado_alumno_id %></td>
+        <td><%=l asignacion_estado_alumno.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_asignacion_estado_alumno_path(asignacion_estado_alumno), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      asignacion_estado_alumno_path(asignacion_estado_alumno),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_asignacion_estado_alumno_path,
+            :class => 'btn btn-primary' %>
