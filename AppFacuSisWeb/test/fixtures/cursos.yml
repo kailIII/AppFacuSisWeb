@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  semestre: 
+  periodo_lectivo: 
+
+two:
+  semestre: 
+  periodo_lectivo: 
