@@ -1,0 +1,26 @@
+<%= form_for @carrera, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :duracion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :duracion, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :titulo_obtenido, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :titulo_obtenido, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                carreras_path, :class => 'btn' %>
+  </div>
+<% end %>
