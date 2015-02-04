@@ -1,5 +1,7 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :docentes
+
   resources :alumnos
 
   resources :periodo_lectivos
