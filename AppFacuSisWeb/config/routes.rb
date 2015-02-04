@@ -1,5 +1,8 @@
 AppFacuSisWeb::Application.routes.draw do
   
+  resources :asignacion_funcionarios
+
+
   resources :sedes
 
 
