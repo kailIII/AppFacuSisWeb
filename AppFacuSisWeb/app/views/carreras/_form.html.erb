@@ -17,6 +17,12 @@
       <%= f.text_field :titulo_obtenido, :class => 'text_field' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :facultad_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:carrera, :facultad_id, Facultad.all, :id, :nombre, {prompt: true}) %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
