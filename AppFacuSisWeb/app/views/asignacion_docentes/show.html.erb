@@ -7,13 +7,13 @@
   <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
   <dd><%= @asignacion_docente.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:docente_id) %>:</strong></dt>
-  <dd><%= @asignacion_docente.docente_id %></dd>
+  <dd><%= @asignacion_docente.docente.nombre_completo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:curso_id) %>:</strong></dt>
   <dd><%= @asignacion_docente.curso_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:materia_id) %>:</strong></dt>
-  <dd><%= @asignacion_docente.materia_id %></dd>
+  <dd><%= @asignacion_docente.materia.nombre_completo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:dia_semanal_id) %>:</strong></dt>
-  <dd><%= @asignacion_docente.dia_semanal_id %></dd>
+  <dd><%= @asignacion_docente.dia_semanal.nombre_completo %></dd>
 </dl>
 
 <div class="form-actions">

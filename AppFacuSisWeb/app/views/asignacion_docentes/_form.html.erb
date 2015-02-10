@@ -8,25 +8,25 @@
   <div class="control-group">
     <%= f.label :docente_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :docente_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_docente, :docente_id, Docente.all, :id, :nombres, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :curso_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :curso_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_docente, :curso_id, Curso.all, :id, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :materia_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :materia_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_docente, :materia_id, Materia.all, :id, :alias, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :dia_semanal_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :dia_semanal_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_docente, :dia_semanal_id, Docente.all, :id, :nombre, {prompt: true}) %>
     </div>
   </div>
 

@@ -20,10 +20,10 @@
       <tr>
         <td><%= link_to asignacion_docente.id, asignacion_docente_path(asignacion_docente) %></td>
         <td><%= asignacion_docente.nombre %></td>
-        <td><%= asignacion_docente.docente_id %></td>
+        <td><%= asignacion_docente.docente.nombre_completo %></td>
         <td><%= asignacion_docente.curso_id %></td>
-        <td><%= asignacion_docente.materia_id %></td>
-        <td><%= asignacion_docente.dia_semanal_id %></td>
+        <td><%= asignacion_docente.materia.nombre_completo %></td>
+        <td><%= asignacion_docente.dia_semanal.nombre_completo %></td>
         <td><%=l asignacion_docente.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
