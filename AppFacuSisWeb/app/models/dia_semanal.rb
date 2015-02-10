@@ -4,4 +4,8 @@ class DiaSemanal < ActiveRecord::Base
   attr_accessible :nombre
   
   has_many :asignacion_docentes
+  
+  def nombre_completo
+    "#{nombre}"
+  end
 end

@@ -6,5 +6,9 @@ class Materia < ActiveRecord::Base
   has_many :asignacion_estado_alumnos
   
   attr_accessible :alias, :codigo, :contenido, :hs, :nombre
+  
+  def nombre_completo
+    "#{nombre}"
+  end
  
 end

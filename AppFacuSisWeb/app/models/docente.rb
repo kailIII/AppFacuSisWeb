@@ -3,4 +3,8 @@ class Docente < ActiveRecord::Base
   :especialidad, :est_civil, :fnac, :genero, :lnac, :nacionalidad, :nombres, :telefono
   
   has_many :asignacion_docentes
+  
+  def nombre_completo
+    "#{nombres}  #{apellidos}"
+  end
 end
