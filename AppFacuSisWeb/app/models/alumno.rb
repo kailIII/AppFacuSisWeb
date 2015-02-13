@@ -5,4 +5,8 @@ class Alumno < ActiveRecord::Base
   attr_accessible :apellidos, :celular, :ci, :direccion, :email, 
                   :est_civil, :fnac, :genero, :lnac, :nacionalidad, 
                   :nombres, :procedencia, :telefono
+                  
+  def nombre_completo
+    "#{nombres} #{apellidos}"
+  end
 end
