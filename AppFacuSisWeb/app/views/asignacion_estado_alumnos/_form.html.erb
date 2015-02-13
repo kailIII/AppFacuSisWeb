@@ -8,37 +8,37 @@
   <div class="control-group">
     <%= f.label :alumno_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :alumno_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_estado_alumno, :alumno_id, Alumno.all, :id, :nombres, {prompt: true}) %>
+    </div>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :semestre_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :semestre_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_estado_alumno, :semestre_id, Semestre.all, :id, :numero, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :periodo_lectivo_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :periodo_lectivo_id, :class => 'number_field' %>
-    </div>
+      <%= collection_select(:asignacion_estado_alumno, :periodo_lectivo_id, PeriodoLectivo.all, :id, :numero, {prompt: true}) %>
   </div>
   <div class="control-group">
     <%= f.label :materia_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :materia_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_estado_alumno, :materia_id, Materia.all, :id, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :sede_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :sede_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_estado_alumno, :sede_id, Sede.all, :id, {prompt: true}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :estado_alumno_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :estado_alumno_id, :class => 'number_field' %>
+      <%= collection_select(:asignacion_estado_alumno, :estado_alumno_id, EstadoAlumno.all, :id, {prompt: true}) %>
     </div>
   </div>
 
