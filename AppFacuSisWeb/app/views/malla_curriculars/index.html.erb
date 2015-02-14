@@ -1,29 +1,42 @@
-<h1>Listing malla_curriculars</h1>
-
-<table>
-  <tr>
-    <th>Plan curricular</th>
-    <th>Facultad</th>
-    <th>Curso</th>
-    <th>Materia</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @malla_curriculars.each do |malla_curricular| %>
-  <tr>
-    <td><%= malla_curricular.plan_curricular %></td>
-    <td><%= malla_curricular.facultad %></td>
-    <td><%= malla_curricular.curso %></td>
-    <td><%= malla_curricular.materia %></td>
-    <td><%= link_to 'Show', malla_curricular %></td>
-    <td><%= link_to 'Edit', edit_malla_curricular_path(malla_curricular) %></td>
-    <td><%= link_to 'Destroy', malla_curricular, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = MallaCurricular -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:plan_curricular_id) %></th>
+      <th><%= model_class.human_attribute_name(:facultad_id) %></th>
+      <th><%= model_class.human_attribute_name(:curso_id) %></th>
+      <th><%= model_class.human_attribute_name(:materia_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @malla_curriculars.each do |malla_curricular| %>
+      <tr>
+        <td><%= link_to malla_curricular.id, malla_curricular_path(malla_curricular) %></td>
+        <td><%= malla_curricular.plan_curricular_id %></td>
+        <td><%= malla_curricular.facultad_id %></td>
+        <td><%= malla_curricular.curso_id %></td>
+        <td><%= malla_curricular.materia_id %></td>
+        <td><%=l malla_curricular.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_malla_curricular_path(malla_curricular), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      malla_curricular_path(malla_curricular),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Malla curricular', new_malla_curricular_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_malla_curricular_path,
+            :class => 'btn btn-primary' %>

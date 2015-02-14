@@ -1,33 +1,32 @@
-<%= form_for(@malla_curricular) do |f| %>
-  <% if @malla_curricular.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@malla_curricular.errors.count, "error") %> prohibited this malla_curricular from being saved:</h2>
-
-      <ul>
-      <% @malla_curricular.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @malla_curricular, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :plan_curricular_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:asignacion_estado_alumno, :plan_curricular_id, PlanCurricular.all, :id, {prompt: true}) %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :facultad_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:asignacion_estado_alumno, :facultad_id, Facultad.all, :id, :nombre, {prompt: true}) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :curso_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:asignacion_estado_alumno, :curso_id, Curso.all, :id, {prompt: true}) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :materia_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:asignacion_estado_alumno, :materia_id, Materia.all, :id, :nombre, {prompt: true}) %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :plan_curricular %><br />
-    <%= f.text_field :plan_curricular %>
-  </div>
-  <div class="field">
-    <%= f.label :facultad %><br />
-    <%= f.text_field :facultad %>
-  </div>
-  <div class="field">
-    <%= f.label :curso %><br />
-    <%= f.text_field :curso %>
-  </div>
-  <div class="field">
-    <%= f.label :materia %><br />
-    <%= f.text_field :materia %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                malla_curriculars_path, :class => 'btn' %>
   </div>
 <% end %>
