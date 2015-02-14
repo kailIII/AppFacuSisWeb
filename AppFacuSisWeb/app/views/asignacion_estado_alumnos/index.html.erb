@@ -22,12 +22,12 @@
       <tr>
         <td><%= link_to asignacion_estado_alumno.id, asignacion_estado_alumno_path(asignacion_estado_alumno) %></td>
         <td><%= asignacion_estado_alumno.nombre %></td>
-        <td><%= asignacion_estado_alumno.alumno_id %></td>
-        <td><%= asignacion_estado_alumno.semestre_id %></td>
-        <td><%= asignacion_estado_alumno.periodo_lectivo_id %></td>
-        <td><%= asignacion_estado_alumno.materia_id %></td>
-        <td><%= asignacion_estado_alumno.sede_id %></td>
-        <td><%= asignacion_estado_alumno.estado_alumno_id %></td>
+        <td><%= asignacion_estado_alumno.alumno.nombre_completo %></td>
+        <td><%= asignacion_estado_alumno.semestre.completo %></td>
+        <td><%= asignacion_estado_alumno.periodo_lectivo.completo %></td>
+        <td><%= asignacion_estado_alumno.materia.nombre_completo %></td>
+        <td><%= asignacion_estado_alumno.sede.completo %></td>
+        <td><%= asignacion_estado_alumno.estado_alumno.mostrar_nombre %></td>
         <td><%=l asignacion_estado_alumno.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
