@@ -45,7 +45,7 @@ AppFacuSisWeb::Application.routes.draw do
   resources :nota
 
 
-  resources :materia
+  resources :materias
 
 
   resources :arancels
